@@ -1,0 +1,15 @@
+// ------------------------------------------------------------------------
+// gmaps-docs: mixins/_font.scss
+// ------------------------------------------------------------------------
+
+$font-size--base   : 16px;
+$line-height--base : 22px;
+
+
+@function em($target: $font-size--base, $context: $font-size--base) {
+  @return ($target / $context) * 1em;
+}
+
+@function rem($target: $font-size--base, $context: $font-size--base) {
+  @return ($target / $context) * 1rem;
+}
