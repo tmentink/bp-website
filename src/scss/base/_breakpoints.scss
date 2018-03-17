@@ -1,0 +1,115 @@
+
+// ------------------------------------------------------------------------
+// Min Width
+// ------------------------------------------------------------------------
+
+@mixin bp-min-sm {
+  @media all and (min-width: em(576px)) {
+    @content;
+  }
+}
+
+@mixin bp-min-md {
+  @media all and (min-width: em(768px)) {
+    @content;
+  }
+}
+
+@mixin bp-min-lg {
+  @media all and (min-width: em(992px)) {
+    @content;
+  }
+}
+
+@mixin bp-min-xl {
+  @media all and (min-width: em(1200px)) {
+    @content;
+  }
+}
+
+
+// ------------------------------------------------------------------------
+// Max Width
+// ------------------------------------------------------------------------
+
+@mixin bp-max-xs {
+  @media all and (max-width: em(575px)) {
+    @content;
+  }
+}
+
+@mixin bp-max-sm {
+  @media all and (max-width: em(767px)) {
+    @content;
+  }
+}
+
+@mixin bp-max-md {
+  @media all and (max-width: em(991px)) {
+    @content;
+  }
+}
+
+@mixin bp-max-lg {
+  @media all and (max-width: em(1199px)) {
+    @content;
+  }
+}
+
+
+// ------------------------------------------------------------------------
+// Only
+// ------------------------------------------------------------------------
+
+@mixin bp-only-xs {
+  @media all and (max-width: em(575px)) {
+    @content;
+  }
+}
+
+@mixin bp-only-sm {
+  @media all and (min-width: em(576px)) and (max-width: em(767px)) {
+    @content;
+  }
+}
+
+@mixin bp-only-md {
+  @media all and (min-width: em(768px)) and (max-width: em(991px)) {
+    @content;
+  }
+}
+
+@mixin bp-only-lg {
+  @media all and (min-width: em(992px)) and (max-width: em(1199px)) {
+    @content;
+  }
+}
+
+@mixin bp-only-xl {
+  @media all and (min-width: em(1200px)) {
+    @content;
+  }
+}
+
+
+// ------------------------------------------------------------------------
+// Orientation
+// ------------------------------------------------------------------------
+
+@mixin bp-landscape-phone {
+  @media all and (orientation:landscape) and (max-width: em(768px)) {
+    @content;
+  } 
+}
+
+@mixin bp-landscape-tablet {
+  @media all and (orientation:landscape) and (max-width: em(1024px)) {
+    @content;
+  } 
+}
+
+@mixin bp-portrait-tablet {
+  @media all and (orientation:portrait) and (max-width: em(1024px)) {
+    @content;
+  } 
+}

@@ -1,4 +1,9 @@
 
-@import "../mixins/font";
-@import "../mixins/transform";
-@import "../mixins/transition";
+//
+// Base
+//
+@import "../base/breakpoints";
+@import "../base/font";
+@import "../base/reset";
+@import "../base/transform";
+@import "../base/transition";
