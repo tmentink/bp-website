@@ -9,6 +9,12 @@ html {
   box-sizing: border-box;
 }
 
+/* HACK for IE & Edge */
+html,
+body {
+  overflow-x: hidden;
+}
+
 /* iPad Input Shadows */
 input[type="text"],
 input[type="email"],

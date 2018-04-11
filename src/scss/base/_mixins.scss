@@ -1,0 +1,96 @@
+
+// ------------------------------------------------------------------------
+// Absolute Positioning
+// ------------------------------------------------------------------------
+
+@mixin absolute-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  @include transform(translate(-50%,-50%));
+}
+
+@mixin absolute-hcenter {
+  position: absolute;
+  left: 50%;
+  @include transform(translateX(-50%));
+}
+
+@mixin absolute-vcenter {
+  position: absolute;
+  top: 50%;
+  @include transform(translateY(-50%));
+}
+
+
+// ------------------------------------------------------------------------
+// Animations
+// ------------------------------------------------------------------------
+
+@mixin animation ($animation, $duration: 2s, $easing: "linear", $iteration: infinite, $delay: 0) {
+  -webkit-animation-name: $animation;
+  -webkit-animation-duration: $duration;
+  -webkit-animation-timing-function: $easing;
+  -webkit-animation-iteration-count: $iteration;
+  -webkit-animation-delay: $delay;
+  -webkit-animation-fill-mode: forwards;
+
+  animation-name: $animation;
+  animation-duration: $duration;
+  animation-timing-function: $easing;
+  animation-iteration-count: $iteration;
+  animation-delay: $delay;
+  animation-fill-mode: forwards;
+}
+
+
+// ------------------------------------------------------------------------
+// Box Shadow
+// ------------------------------------------------------------------------
+
+@mixin raised-shadow {
+  box-shadow: 0 rem(1px) rem(3px) 0 rgba(black, 0.12),
+              0 rem(1px) rem(3px) 0 rgba(black, 0.24);
+}
+
+@mixin lifted-shadow {
+  box-shadow: 0 rem(6px) rem(18px) 0 rgba(black, 0.2),
+              0 rem(8px) rem(24px) 0 rgba(black, 0.15);
+}
+
+
+// ------------------------------------------------------------------------
+// Transform
+// ------------------------------------------------------------------------
+
+@mixin backface-hidden {
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+
+@mixin hard-acc {
+  @include transform(translateZ(0));
+  @include backface-hidden;
+}
+
+@mixin transform($value) {
+  -webkit-transform: #{$value};
+      -ms-transform: #{$value};
+          transform: #{$value};
+}
+
+
+// ------------------------------------------------------------------------
+// Transitions
+// ------------------------------------------------------------------------
+
+@mixin transition($property: "all", $time: 0.2s, $easing: "ease-out", $delay: 0) {
+  -webkit-transition-property: #{$property};
+          transition-property: #{$property};
+  -webkit-transition-duration: #{$time};
+          transition-duration: #{$time};
+  -webkit-transition-timing-function: #{$easing};
+          transition-timing-function: #{$easing};      
+  -webkit-transition-delay: #{$delay};
+          transition-delay: #{$delay};
+}

@@ -1,7 +1,26 @@
 
-$font-size--base   : 16px;
-$line-height--base : 22px;
+// ------------------------------------------------------------------------
+// Variables
+// ------------------------------------------------------------------------
 
+$font-family--base : "Montserrat", sans-serif;
+$font-size--base   : 16px;
+$line-height--base : 1.6;
+
+html,
+input,
+textarea {
+  font-size: $font-size--base;
+  font-family: $font-family--base;
+  line-height: $line-height--base;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+// ------------------------------------------------------------------------
+// Functions
+// ------------------------------------------------------------------------
 
 @function em($target: $font-size--base, $context: $font-size--base) {
   @return ($target / $context) * 1em;

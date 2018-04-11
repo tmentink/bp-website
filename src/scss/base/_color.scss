@@ -1,0 +1,16 @@
+
+// ------------------------------------------------------------------------
+// Variables
+// ------------------------------------------------------------------------
+
+$color--white  : #FAFAFA;
+$color--black  : #252A30;
+$color--blue   : #5EA4F7;
+$color--grey   : #EEE;
+$color--red    : #FF6633;
+$color--yellow : #FED766;
+
+html {
+  background: $color--white;
+  color: $color--black;
+}
