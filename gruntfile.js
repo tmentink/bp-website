@@ -34,7 +34,7 @@ module.exports = function(grunt) {
       }
     },
     eslint: {
-      target: ["src/js/**/*.js"]
+      target: ["src/js/**/*.js", "!<%= concat.main.dest %>"]
     },
     sass: {
       main: {
@@ -62,12 +62,18 @@ module.exports = function(grunt) {
         src: "<%= concat.main.dest %>",
         dest: "dist/js/main.js",
       }
+    },
+    watch: {
+      css: {
+        files: ["src/scss/**/*.scss"],
+        tasks: ["sass"]
+      }
     }
   })
 
   require("load-grunt-tasks")(grunt)
   require("time-grunt")(grunt)
 
-  grunt.registerTask("default", ["concat", "babel", "stamp", "uglify", "sass", "clean"])
+  grunt.registerTask("default", ["eslint", "concat", "babel", "stamp", "uglify", "sass", "clean"])
   grunt.registerTask("lint", ["eslint"])
 }
